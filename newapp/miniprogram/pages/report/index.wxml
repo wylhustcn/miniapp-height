@@ -1,0 +1,219 @@
+<wxs module="filter" src='./filter.wxs'></wxs>
+<view class="head">
+    <image src="../../images/harchives/bj@2x.png" class="headimg"></image>
+    <getback title="宝贝身高档案"/>
+    <view class="top">
+
+        <view class="head_imgInfo">
+            <image src="{{childInfo.avatorUrl||parent.avatarUrl}}" class="head_logo" mode="aspectFill"/>
+            <view class="name_age_sex">
+                <view class="name_sex">
+                    <view>{{childInfo.babyName||'未添加'}}</view>
+                    <image src="{{childInfo.sex=='男'?'../../images/archives/boy.png':'../../images/archives/girl.png'}}" class="sex_icon"></image>
+                </view>
+                <view class="health_age">
+                    <image src="../../images/archives/35@2x.png" class="health_icon" />
+                    <view>{{ageObj.lyear||0}}岁{{ageObj.lmonth||0}}个月{{ageObj.lday||0}}天</view>
+                </view>
+            </view>
+        </view>
+        <view class="weight_height">
+            <view class="height_info">
+                <view style="font-weight: 600;">{{herheight}}cm</view>
+                <view style="font-size: 20rpx;">遗传身高(±7cm)</view>
+            </view>
+            <view class="height_info" style="margin-left: 30rpx;">
+                <view style="font-weight: 600;">{{childInfo.wheight}}cm</view>
+                <view style="font-size: 20rpx;">期望成年身高</view>
+            </view>
+        </view>
+    </view>
+    <view class="tag" bindtap="changebaby">切换宝贝</view>
+</view>
+<view class="container">
+
+    <view class="card" style="margin-top: -20rpx;z-index:999;">
+        <view class="modname">
+            <view class="greenLine"></view>
+            <view style="margin-left: 20rpx;">
+                <view>综合小结</view>
+                <view style="font-size: 34rpx;margin-top: 15rpx;" wx:if="{{hleve=='过矮'}}">发育迟缓风险</view>
+                <view style="font-size: 34rpx;margin-top: 15rpx;" wx:if="{{hleve=='偏矮'}}">发育偏缓提醒</view>
+                <view style="font-size: 34rpx;margin-top: 15rpx;" wx:if="{{hleve=='正常'}}">发育正常</view>
+                <view style="font-size: 34rpx;margin-top: 15rpx;" wx:if="{{hleve=='偏高'}}">发育过快风险</view>
+                <view style="font-size: 26rpx;margin-top: 15rpx;font-weight: 500;">身高{{hleve}}</view>
+                <!-- （身高百分比低于1%） -->
+            </view>
+        </view>
+        <view class="whbout">
+            <view class="whb">
+                <view class="whb_item">
+                    <image src="../../images/archives/height.png"></image>
+                    <view style="margin-left: 5rpx;">身高<text style="font-weight: 600;margin-left: 10rpx;">{{curHeight}}cm</text></view>
+                </view>
+                <view class="whb_item">
+                    <image src="../../images/archives/weight.png"></image>
+                    <view style="margin-left: 5rpx;">体重<text style="font-weight: 600;margin-left: 10rpx;">{{curWeight}}kg</text></view>
+                </view>
+                <view class="whb_item">
+                    <image src="../../images/archives/bmi.png"></image>
+                    <view style="margin-left: 5rpx;">BMI值<text style="font-weight: 600;margin-left: 10rpx;">{{bmi}}</text></view>
+                </view>
+            </view>
+        </view>
+        <view class="sccard">
+            <view>实测身高 {{curHeight}}cm</view>
+            <view style="margin-left: 60rpx;">生长发育等级 <text style="color: #00B451;font-size: 36rpx;font-weight: 600;">{{grade}}</text></view>
+        </view>
+        <view class="cluliner">
+            <view class="clunum">
+                <view class="numline" wx:for="{{curList}}">{{item}}</view>
+            </view>
+            <view class="cluline">
+
+                <view class="line " style="background-color: #cbf0df; display: flex;justify-content: center;align-items: center;">
+                    <image src="../../images/archives/rocket.png" style="width: 80rpx;height: 80rpx;" wx:if="{{grade=='下'}}"></image>
+                </view>
+                <view class="line " style="background-color: #a4dbbb;display: flex;justify-content: center;align-items: center;">
+                    <image src="../../images/archives/rocket.png" style="width: 80rpx;height: 80rpx;" wx:if="{{grade=='中下'}}"></image>
+                </view>
+                <view class="line " style="background-color: #64d796; display: flex;justify-content: center;align-items: center;">
+                    <image src="../../images/archives/rocket.png" style="width: 80rpx;height: 80rpx;" wx:if="{{grade=='中'}}"></image>
+                </view>
+                <view class="line " style="background-color: #34c270; display: flex;justify-content: center;align-items: center;">
+                    <image src="../../images/archives/rocket.png" style="width: 80rpx;height: 80rpx;" wx:if="{{grade=='中上'}}"></image>
+                </view>
+                <view class="line " style="background-color: #00b751; display: flex;justify-content: center;align-items: center;">
+                    <image src="../../images/archives/rocket.png" style="width: 80rpx;height: 80rpx;" wx:if="{{grade=='上'}}"></image>
+                </view>
+            </view>
+            <view class="cluline" style="font-size: 24rpx;margin-top: 20rpx;">
+                <view class="line {{grade=='下'?'active':''}}">下</view>
+                <view class="line {{grade=='中下'?'active':''}}">中下</view>
+                <view class="line {{grade=='中'?'active':''}}">中</view>
+                <view class="line {{grade=='中上'?'active':''}}">中上</view>
+                <view class="line {{grade=='上'?'active':''}}">上</view>
+            </view>
+
+        </view>
+    </view>
+
+    <view class="card" style="margin-top: 20rpx;">
+        <hstate id="hstate"></hstate>
+    </view>
+    <view class="card" style="margin-top: 20rpx;">
+        <view class="modname">
+            <view class="greenLine"></view>
+            <view style="margin-left: 20rpx;">遗传身高状态</view>
+        </view>
+        <view style="padding: 20rpx;font-size: 24rpx;">
+            <view> 遗传身高：{{herheight}}cm(±7cm) <text style="margin-left: 30rpx;">期望成年身高：{{childInfo.wheight}}cm</text></view>
+            <view style="margin-top: 10rpx;">期望成年身高比遗传身高 <text style="color: #00B451;">{{childInfo.wheight>=herheight?'高':'低'}}</text><text style="color: #00B451;font-size: 36rpx;margin-left: 10rpx;">{{filter.flex(childInfo.wheight-herheight)}}cm</text></view>
+        </view>
+    </view>
+
+    <view class="card" style="margin-top: 20rpx;">
+        <ycheight id="ycheight"/>
+    </view>
+    <view class="card" style="margin-top: 20rpx;">
+       
+        <bhechart id="bhechart" />
+    </view>
+    <view class="card" style="margin-top: 20rpx;">
+        
+        <bwechart id="bwechart" />
+    </view>
+
+    <view class="card" style="margin-top: 20rpx;">
+        <view class="modname">
+            <view class="greenLine"></view>
+            <view style="margin-left: 20rpx;">体型指数</view>
+        </view>
+        <view style="margin-left: 20rpx;margin-top: 10rpx;"><text style="font-size:32rpx;font-weight: 600;">{{bmi}}</text>
+            <text style="color: #1AB2FA;background-color: #E6FAEF;margin-left: 10rpx;font-size: 26rpx;" wx:if="{{bmi<=BMIlist[0]}}">偏瘦</text>
+            <text style="color: #00B451;background-color: #E6FAEF;margin-left: 10rpx;font-size: 26rpx;" wx:elif="{{bmi<=BMIlist[1]}}">正常</text>
+            <text style="color: #FCDC3E;background-color: #E6FAEF;margin-left: 10rpx;font-size: 26rpx;" wx:elif="{{bmi<=BMIlist[2]}}">超重</text>
+            <text style="color: #FF2222;background-color: #E6FAEF;margin-left: 10rpx;font-size: 26rpx;" wx:else>重度肥胖</text>
+        </view>
+        <view class="whbout">
+            <view class="bar">
+                <view class="barnum">
+                    <view wx:for="{{BMIlist}}">{{item}}</view>
+                    
+                </view>
+                <view class="barnum">
+                    <image src="../../images/report/trangle.png" class="ange"></image>
+                    <image src="../../images/report/trangle.png" class="ange"></image>
+                    <image src="../../images/report/trangle.png" class="ange"></image>
+                </view>
+                <view class="barnum1">
+                    <view class="baritem">
+                        <view>偏瘦</view>
+                        <view class="barclo" style="background-color: #1AB2FA;"></view>
+                    </view>
+                    <view class="baritem">
+                        <view>正常</view>
+                        <view class="barclo" style="background-color: #00B451;"></view>
+                    </view>
+                    <view class="baritem">
+                        <view>超重</view>
+                        <view class="barclo" style="background-color: #FCDC3E;"></view>
+                    </view>
+                    <view class="baritem">
+                        <view>重度肥胖</view>
+                        <view class="barclo" style="background-color: #FF2222"></view>
+                    </view>
+                </view>
+            </view>
+
+            <view class="whb">
+                <view class="botitem">
+                    <view class="num" style="color:#1AB2FA" wx:if="{{bmi<=BMIlist[0]}}">偏瘦</view>
+                    <view class="num" style="color:#00B451" wx:elif="{{bmi<=BMIlist[1]}}">正常</view>
+                    <view class="num" style="color:#FCDC3E" wx:elif="{{bmi<=BMIlist[2]}}">超重</view>
+                    <view class="num" style="color:#FF2222" wx:else>重度肥胖</view>
+                    <view class="dj">体型指数等级</view>
+                </view>
+                <view class="botitem">
+                    <view class="num">{{bmi}}</view>
+                    <view class="dj">体型指数数值</view>
+                </view>
+                <view class="botitem">
+                    <view class="num"  wx:if="{{bmi<=BMIlist[0]}}">70</view>
+                    <view class="num"  wx:elif="{{bmi<=BMIlist[1]}}">100</view>
+                    <view class="num"  wx:elif="{{bmi<=BMIlist[2]}}">50</view>
+                    <view class="num"  wx:else>30</view>
+                    <view class="dj">体型指数得分</view>
+                </view>
+            </view>
+            <view class='ckao'>
+    <view>  注：①根据2005年九省/市儿童体格发育调查数据研究制定
+参考文献：中华儿科杂志，2009年7期
+②体块指数(BMI）二体重/(身高义身高）（kg/㎡)</view>
+  
+</view>
+          
+        </view>
+    </view>
+
+    <view class="card" style="margin-top: 20rpx;">
+        <view class="modname">
+            <view class="greenLine"></view>
+            <view style="margin-left: 20rpx;">综合分析</view>
+        </view>
+
+        <view style="margin-left: 20rpx;" wx:if="{{bmi<=BMIlist[0]}}">  总结：平日多运动，增强心肺功能，以促进体格发育；保持营养均衡，注意米、面、蛋、奶、肉类、蔬菜等的合理搭配；养成良好的饮食行为习惯，如不能挑食、偏食，家长要带头做好不挑食、偏食的习惯；</view>
+                    <view style="margin-left: 20rpx;"  wx:elif="{{bmi<=BMIlist[1]}}">总结：当前孩子发育良好，平日加强锻炼，养成良好饮食习惯；</view>
+                    <view style="margin-left: 20rpx;"  wx:elif="{{bmi<=BMIlist[2]}}">总结：平日多运动，增强心肺功能，以促进体格发育；保持营养均衡，少吃高蛋白食物；</view>
+                    <view style="margin-left: 20rpx;"  wx:else>总结：适当减肥平日多运动，增强心肺功能，以促进体格发育；保持营养均衡，注意米、面、蛋、奶、肉类、蔬菜等的合理搭配，不能暴饮暴食；</view>
+        
+        <view style="font-size: 26rpx;color:#979797 ;margin-left: 20rpx;margin-top: 10rpx;">* 注意：本建议仅供医学科普参考使用，不能代替专业诊疗。</view>
+    </view>
+    <view class="btns">
+       
+        <!-- <button class="save" >保存图片</button> -->
+        <!-- <button class="share" open-type="share">分享</button> -->
+        <button class="share" bindtap="getback">返回</button>
+    </view>
+</view>
+<changeChild id="showChangeChild" bindrefresh="refresh"></changeChild>

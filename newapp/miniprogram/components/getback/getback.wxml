@@ -1,0 +1,7 @@
+<view class="tabBar" style="margin-top:{{capsuleInfo.top}}px;height: {{capsuleInfo.height}}px;">
+    <text>{{title}}</text>
+</view>
+<view style="margin-top:{{capsuleInfo.top}}px;height: {{capsuleInfo.height}}px; position: absolute;align-items: center;display: flex;" bindtap="getback">
+    <image src="../../images/common/back.png" class="arrow"></image>
+    <!-- <text class="iconfont icon-zuojiantou" style="font-size: 36rpx; color: white;margin-left: 30rpx;" bindtap="getback" /> -->
+</view>

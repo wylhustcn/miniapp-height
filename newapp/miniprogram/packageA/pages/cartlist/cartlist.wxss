@@ -1,0 +1,136 @@
+
+.head{
+    position: relative;
+    width: 100vw;
+    box-sizing: border-box;
+}
+
+.tag{
+    position: absolute;
+    right: 0rpx;
+    top: 320rpx;
+    padding: 0rpx 15rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    background-color: rgb(242,251,246);
+    border-radius: 25rpx 0rpx 0rpx 25rpx;
+    font-size: 28rpx;
+}
+
+
+
+.headimg{
+    width: 100% ;
+    height: 440rpx;
+    z-index: 999 !important;
+}
+
+.head_imgInfo{
+   
+   display: flex;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+}
+.head_logo{
+    width: 140rpx;
+    height: 140rpx;
+   border: 6rpx solid white;
+   border-radius: 70rpx;
+   box-sizing: border-box;
+   flex-shrink: 0;
+   background-color: #00b451;
+    
+}
+.name_age_sex{
+    margin-left: 10rpx;
+   
+}
+.name_sex{
+    display: flex;
+   
+    align-items: center;
+    font-size: 30rpx;
+    color: white;
+
+}
+.sex_icon{
+    width: 30rpx;
+    height: 30rpx;
+    margin-left: 10rpx;
+}
+.health_age{
+    margin-top: 15rpx;
+    display: flex;
+    background-color: #ECF0EE;
+    border-radius: 10rpx;
+    font-size: 20rpx;
+    padding: 0rpx 10rpx 0rpx 0rpx;
+    align-items: center;
+}
+.health_icon{
+    margin-right: 10rpx;
+    width: 40rpx;
+    height: 40rpx;
+}
+.weight_height{
+    display: flex;
+    color: white;
+    font-size: 32rpx;
+    margin: 20rpx 0rpx;
+}
+.title{
+    display: flex;
+    font-size: 32rpx;
+    font-weight: 600;
+    color: #231815;
+    align-items: center;
+}
+.greenline{
+    height: 40rpx;
+    width: 10rpx;
+    background-color: #00B451;
+    margin-right: 10rpx;
+}
+.chartBox{
+   
+    width: 100%;
+    /* background-color: gray; */
+    padding: 10rpx;
+    box-sizing: border-box;
+}
+.boxtop{
+display: flex;
+align-items: baseline;
+justify-content: space-between;
+font-size: 26rpx;
+}
+.timeline{
+    font-size: 26rpx;
+    color: #00B451;
+    position: relative;
+    /* padding-right: 10rpx; */
+}
+.timeline::after{
+    position: absolute;
+    content: '';
+    border: 10rpx solid transparent;
+    border-top: 10rpx solid #979797;
+    margin-left: 10rpx;
+    margin-top: 10rpx;
+}
+.hasgrow{
+    padding-left: 10rpx;
+    font-size: 28rpx;
+}
+.heightchart{
+    height: 650rpx;
+    width: 100%;
+}
+
+.varheightchart{
+    height: 350rpx;
+    width: 100%;
+}
+
+

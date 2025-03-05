@@ -1,0 +1,72 @@
+/* pages/addshow/index.wxss */
+page{
+    background-color: gray;
+}
+.container{
+    position: relative;
+  margin-top: 300rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 800rpx;
+}
+.container image{
+    height: 800rpx;
+}
+.context{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+position: absolute;
+height: 100%;
+width: 100%;
+/* background-color: red; */
+}
+.recontent{
+    box-sizing: border-box;
+    padding: 20rpx;
+    width: 600rpx;
+    height: 700rpx;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 50rpx;
+}
+.title{
+    font-size: 32rpx;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 30rpx;
+}
+.conbtn{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    margin-top: 50rpx;
+
+}
+.conbtn view{
+    width: 200rpx;
+    text-align: center;
+    font-size: 28rpx;
+}
+.cancel{
+height: 60rpx;
+line-height: 60rpx;
+
+border: 1rpx solid #00b451;
+color: #00b451;
+border-radius: 30rpx;
+}
+.confrim{
+    height: 60rpx;
+    line-height: 60rpx;
+    background-color: #00b451;
+    color: white;
+    border-radius: 30rpx;
+}
+.van-cell{
+    margin-top: 20rpx !important;
+    background-color: #eff4f2 !important;
+    border-radius: 20rpx;
+}

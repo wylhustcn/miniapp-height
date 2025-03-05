@@ -1,0 +1,47 @@
+/**index.wxss**/
+.container1 {
+    
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    background-color: white;
+    height: 300rpx;
+    width: 700rpx;
+  } 
+  
+ec-canvas {
+    width: 100%;
+    height: 100%;
+  }
+  .conclusion{
+      display: flex;
+      font-size: 24rpx;
+      align-items: center;
+      margin-top: 20rpx;
+  }
+  .conclusion image{
+      width: 30rpx;
+      height: 30rpx;
+  }
+  .ckao{
+      margin-top: 10rpx;
+      font-size: 24rpx;
+      color: #979797;
+  }
+  .modname{
+    display: flex;
+    height: 60rpx;
+    align-items: center;
+    font-size: 30rpx;
+    font-weight: 600;
+}
+.greenLine{
+  height: 40rpx;
+  width: 10rpx;
+  background-color: #09b64b;
+}
+  
+  

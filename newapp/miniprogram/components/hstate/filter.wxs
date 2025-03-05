@@ -1,0 +1,9 @@
+var filter={
+    abs:function(params){
+  return Math.abs(params)
+    },
+    tofex:function(param){
+        return param.toFixed(2)
+    }
+}
+module.exports=filter

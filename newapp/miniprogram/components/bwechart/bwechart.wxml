@@ -1,0 +1,28 @@
+<!--index.wxml-->
+<view class="modname">
+            <view class="greenLine"></view>
+            <view style="margin-left: 20rpx;">体重曲线图</view>
+        </view>
+<view class="container1">
+  <ec-canvas id="mychart-dom-line" id="mychart-line" ec="{{ ec }}"></ec-canvas>
+  <view style="width: 100%;color: #666666;font-size: 25rpx;text-align: end;">年龄(岁)</view>
+</view>
+<view class="conclusion">
+    <image src="../../images/common/record.png"></image>
+    <view >  您当前体重{{wleve}}
+        
+        <text wx:if="{{wleve=='体瘦'}}">,（低于标准的{{percent}}%）改善日常饮食，注意劳逸结合</text>
+        <text wx:elif="{{wleve=='中度体瘦'}}">,（低于标准的{{percent}}%）改善日常饮食，注意劳逸结合</text>
+        <text wx:elif="{{wleve=='轻度体瘦'}}">,（低于标准的{{percent}}%）改善日常饮食，注意劳逸结合</text>
+        <text wx:elif="{{wleve=='标准'}}">,注意营养均衡，加强身体锻炼</text>
+       <text wx:elif="{{wleve=='肥胖'}}">(超过标准体重的{{percent}}%) 需改善日常饮食，加强身体锻炼</text>
+       <text wx:else>(超过标准体重的{{percent}}%) 需改善日常饮食，加强身体锻炼</text>
+      
+    </view>
+    <view>注：本建议仅供医学参考科普使用，不能代替专业治疗</view>
+</view>
+<view class='ckao'>
+<view> *数据参考</view>
+<view>1. 根据2005年九省/市儿童体格发育调查数据绘制体重曲线图</view>
+<view>2.P3-P97为参考值，将体重从低到高依次排序</view>
+</view>

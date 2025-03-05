@@ -1,0 +1,109 @@
+<view class="head">
+    <image src="../../../images/archives/bj@2x.png" class="headimg" />
+    <getback title="用户搜索" />
+    <view class="search">
+        <view class="cltime" bindtap="showTime">
+            <view wx:if="{{beginDate==''}}">
+                测量日期
+            </view>
+            <view class="retime" wx:else>
+                <view>{{beginDate}}</view>
+                <view>{{endDate}}</view>
+            </view>
+        </view>
+        <input type="text" placeholder="搜索手机号、昵称、ID" model:value="{{searchWord}}"/>
+
+        <view class="searchbtn" bindtap="search">搜索</view>
+    </view>
+</view>
+<view class="container">
+    <view class="item_card" wx:for="{{list}}">
+        <view class="item_top">
+            <view class="top_left">
+                <image src="{{item.avatarUrl}}" class="avator"></image>
+            </view>
+
+            <view class="top_right">
+                <view class="name_grade">
+                    <view>{{item.curchildName||'未添加'}}</view>
+                   
+                    <view class="grade_card">
+                        <image src="../../../images/common/grade.png" class="gradeicon"></image>
+                   <view>当前积分 {{item.grade||0}}</view>
+                    </view>
+                </view>
+                <view class="phone_grade">
+                 <view style="color: #979797;">手机 <text style="color: #404040;">{{item.phoneNumber}}</text></view>
+                 <view style="height: 90%;width: 1rpx;background-color: #cfcece;margin: 0rpx 10rpx;"></view>
+                 <view style="color: #979797;">已累计积分 <text style="color: #404040;">{{item.tatolGrade||0}}</text></view>
+                </view>
+            </view>
+        </view>
+
+        <view class="cur_num">
+         <view class="cur_num_item">
+          <image src="../../../images/curtlist/height.png"></image>
+          <view>最近测量 <text style="font-weight: 600;">{{item.curheight||0}}cm</text></view>
+         </view>
+         <view class="cur_num_item">
+          <image src="../../../images/curtlist/weight.png"></image>
+          <view>测量次数 <text style="font-weight: 600;">{{item.testNum||0}}</text></view>
+         </view>
+        </view>
+        
+        <view class="more" wx:if="{{item.open}}">
+        <view class="moredata">
+          <view>ID号</view>
+          <view bindtap="copyid" data-id="{{item._openid}}">{{item._openid}} 复制</view>
+        </view>
+        <view class="moredata">
+          <view>注册时间</view>
+          <view>{{item.regisTime}}</view>
+        </view>
+        </view>
+
+        <view class="item_card_bottom">
+        <view></view>
+        <view class='look' bindtap="look_hide" data-id="{{item._id}}">
+         <view>{{item.open?'收起':'查看更多'}}</view>
+         <image src="../../../images/curtlist/up_down.png" class="{{item.open?'up':'down'}}"></image>
+        </view>
+        <view class="export" bindtap="export" data-id="{{item._id}}" data-openid="{{item._openid}}">导出</view>
+        </view>
+
+        <view class="tag1" wx:if="{{item.tags=='活跃用户'}}">活跃用户</view>
+        <view class="tag2" wx:if="{{item.tags=='一般用户'}}">一般用户</view>
+        <view class="tag3" wx:if="{{item.tags=='沉默用户'}}">沉默用户</view>
+    </view>
+</view>
+
+
+<van-popup show="{{ showChooseDate}}" wx:if="{{ showChooseDate}}" round position="bottom" custom-style="height: 50%" bind:close="onClose">
+
+    <view class="timeCard">
+        <view class="btnList">
+            <view class="cancle" bindtap="onClose">取消</view>
+            <view class="title">测试日期区间</view>
+            <view class="conform" bindtap="comform">确定</view>
+        </view>
+
+        <view class="begin_endbtn">
+            <view class="begin_end" bindtap="getBeginDate">
+                <view class="{{dateIndex==0?'iacvtive':'nactive'}}">开始日期</view>
+                <view class="{{dateIndex==0?'line':'nline'}}"></view>
+            </view>
+            <view class="begin_end" bindtap="getEndDate">
+                <view class="{{dateIndex==1?'iacvtive':'nactive'}}">结束日期</view>
+                <view class="{{dateIndex==1?'line':'nline'}}"></view>
+            </view>
+        </view>
+        <view style="display: {{dateIndex==1?'':'none'}};">
+            <van-datetime-picker type="date" value="{{ currentDate1 }}" bind:input="onInput" min-date="{{ minDate1 }}" max-date="{{ maxDate }}" formatter="{{ formatter }}" />
+        </view>
+        <view style="display: {{dateIndex==0?'':'none'}};">
+            <van-datetime-picker type="date" value="{{ currentDate2 }}" bind:input="onInput" min-date="{{ minDate2 }}" max-date="{{ maxDate }}" formatter="{{ formatter }}" />
+        </view>
+    </view>
+
+
+</van-popup>

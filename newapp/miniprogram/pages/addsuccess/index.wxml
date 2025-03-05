@@ -1,0 +1,21 @@
+<view class="head">
+    <view class="tabBar" style="margin-top:{{capsuleInfo.top}}px;height: {{capsuleInfo.height}}px;">
+        <text>测身高送积分</text>
+    </view>
+</view>
+<view class="container">
+
+    <image src="../../images/show/bj@2x.png"></image>
+    <view class="context">
+        <view class="recontent ">
+           
+            <view class="title">恭喜</view>
+            <view class="title">已积分 <text style="color: #00b451;">10分</text> </view>
+            <image src="../../images/common/box.png" class="boximg1"></image>
+            <view class="info">*每测量一次身高，可获得10积分</view>
+            <view class="info">每天最多获取10积分，过0点刷新</view>
+
+            <view class="confrim" bindtap="back">领取奖励</view>
+        </view>
+    </view>
+</view>

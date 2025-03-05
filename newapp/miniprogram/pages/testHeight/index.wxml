@@ -1,0 +1,60 @@
+<view class="head">
+    <image src="../../images/archives/bj@2x.png" class="headimg"></image>
+    <getback title="周周测身高"></getback>
+</view>
+<view class="container">
+    <view class="card" style="margin-top: -50rpx; z-index: 999;padding-bottom: 20rpx;position: relative;">
+        <view class="modname">
+            <view class="greenLine"></view>
+            <view style="margin-left: 10rpx;">宝贝基础信息</view>
+        </view>
+       
+        <image src="{{avatorUrl||'../../images/common/IP-04@2x.png'}}" class="head_girl" bindtap="changeAvator"></image>
+        <image src="../../images/archives/edit.png" style="width: 40rpx;height: 40rpx; position: absolute;right: 30rpx;top: 30rpx;" bindtap="changeAvator" bindtap="changeAvator"></image>
+       
+        <view style="height: 26rpx;"></view>
+        <van-field model:value="{{ babyName }}" required clearable label="宝贝姓名" placeholder="请输入" input-align="right" />
+        <picker bindchange="getSex" range="{{sexList}}">
+            <van-cell title="宝贝性别" is-link value="{{sex}}" required />
+        </picker>
+        <picker bindchange="getBorthDay" mode="date" start="2004-01-01">
+            <van-cell title="宝贝生日" is-link value="{{borthday}}" required />
+        </picker>
+        <picker bindchange="bindFHeightChange" mode="multiSelector" range="{{CDHeight}}" value="{{[122,0,0,0]}}">
+            <van-cell title="父亲身高(cm)" is-link value="{{fheight==''?'请选择':fheight}}" required />
+        </picker>
+        <picker bindchange="bindMHeightChange" mode="multiSelector" range="{{CDHeight}}" value="{{[122,0,0,0]}}">
+            <van-cell title="母亲身高(cm)" is-link value="{{mheight==''?'请选择':mheight}}" required />
+        </picker>
+        <picker bindchange="bindWHeightChange" mode="multiSelector" range="{{CDHeight}}" value="{{[122,0,0,0]}}">
+            <van-cell title="期望成年身高(cm)" is-link value="{{wheight==''?'请选择':wheight}}" required />
+        </picker>
+    </view>
+    <view class="card" style="margin-top: 20rpx; z-index: 999;padding-bottom: 20rpx;position: relative;">
+        <view class="modname">
+            <view class="greenLine"></view>
+            <view style="margin-left: 10rpx;">测量信息</view>
+        </view>
+        <view style="height: 26rpx;"></view>
+        <picker bindchange="bindHeightChange" mode="multiSelector" range="{{CDHeight}}" value="{{sexItem.type==1?[6,6,6,6]:[7,7,7,7]}}">
+            <van-cell title="宝贝身高(cm)" is-link value="{{curheight==''?'请选择':curheight}}" required />
+        </picker>
+        <picker bindchange="bindWeightChange" mode="multiSelector" range="{{CDWeight}}" value="{{sexItem.type==1?[15,3,3,3]:[16,2,2,2]}}">
+            <van-cell title="宝贝体重(kg)" is-link value="{{curweight==''?'请选择':curweight}}" required />
+        </picker>
+        <view style="position: relative;">
+            <picker bindchange="getBoneage" range="{{boneList}}" bindcancel="cancelboneage">
+            <van-cell is-link value="{{boneage}}">
+                <view slot="title" style="display: flex;">
+                    <view class="van-cell-text">骨龄</view>
+                    <van-icon name="question-o" catchtap="showExplain" style="margin-left: 10rpx;" color='gray' size='18'/>
+                </view>
+            </van-cell>
+        </picker>
+        <view class="explain" hidden="{{showExplain}}">骨龄预测的身高更为准确，如未测过，可不填</view>
+        </view>
+        <van-cell title="测量日期" value="{{testTime}}" />
+        <van-field model:value="{{ city }}"  clearable label="当前城市" placeholder="请输入当前城市" input-align="right" />
+    </view>
+    <view class="addbtn" bindtap="addChildInfo">记录</view>
+</view>

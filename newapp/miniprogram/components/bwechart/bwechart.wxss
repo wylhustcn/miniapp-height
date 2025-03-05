@@ -1,0 +1,74 @@
+/**index.wxss**/
+.container1 {
+    
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    background-color: white;
+    height: 700rpx;
+    width: 700rpx;
+    position: relative;
+    padding-right: 20rpx;
+  } 
+  .name{
+    position: absolute; 
+    right: 0rpx; 
+    font-size: 12rpx;
+    top: 190rpx;
+}
+.pnum:nth-child(2){
+    margin-top: 100rpx;
+}
+.pnum:nth-child(3){
+    margin-top: 60rpx;
+}
+.name1{
+    position: absolute; 
+    right: 0rpx; 
+    font-size: 12rpx;
+    top: 260rpx;
+}
+.pnum1:nth-child(2){
+    margin-top: 80rpx;
+}
+.pnum1:nth-child(3){
+    margin-top: 50rpx;
+}
+ec-canvas {
+    width: 100%;
+    height: 100%;
+  }
+  .conclusion{
+    /* display: flex; */
+    font-size: 24rpx;
+    /* align-items: center; */
+    margin-top: 20rpx;
+
+}
+.conclusion image{
+    float: left;
+    width: 30rpx;
+    height: 30rpx;
+    flex-shrink: 0;
+}
+.ckao{
+    margin-top: 10rpx;
+    font-size: 24rpx;
+    color: #979797;
+}
+.modname{
+    display: flex;
+    height: 60rpx;
+    align-items: center;
+    font-size: 30rpx;
+    font-weight: 600;
+}
+.greenLine{
+  height: 40rpx;
+  width: 10rpx;
+  background-color: #09b64b;
+}
+  

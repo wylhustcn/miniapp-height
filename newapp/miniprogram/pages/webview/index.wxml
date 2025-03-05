@@ -1,0 +1,5 @@
+<view class="page-body">
+  <view class="page-section page-section-gap">
+    <web-view src="https://mp.weixin.qq.com/s?__biz=Mzg2NTg0MTU1Mg==&mid=2247483857&idx=1&sn=9a3970e3037a181c8e204baa6c9ea4fd&chksm=ce52b92ef92530386b9f549161af881700302d7b8a4579700cab59b6413081b0d032cfc42b2e#rd"></web-view>
+  </view>
+</view>

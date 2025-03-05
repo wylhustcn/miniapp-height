@@ -1,0 +1,136 @@
+
+.child_info{
+    display: flex;
+    justify-content: space-between;
+    height: 120rpx;
+}
+.child_info_left{
+    height: 100rpx;
+  display: flex;
+    width: 200rpx;
+    align-items: center;
+
+}
+.childinfo{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+.head_img{
+    width: 140rpx;
+    height: 140rpx;
+    position: relative;
+   left: -15rpx;
+   top: -40rpx ;
+   border: 20rpx solid white;
+   border-radius: 70rpx;
+   box-sizing: border-box;
+   flex-shrink: 0;
+}
+.child_info_right{
+    height: 100rpx;
+    width: 200rpx;
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.height_btn{
+    display: flex;
+    /* width: 100%; */
+    background-color: #00b451;
+    height: 50rpx;
+    line-height: 50rpx;
+    align-items: center;
+    color: white;
+    padding: 0rpx 15rpx;
+    justify-content: center;
+    font-size: 26rpx;
+    border-radius: 25rpx;
+
+}
+.height_weight{
+    width: 100%;
+    display: flex;
+   justify-content: space-around;
+}
+.height_item{
+    background-color: #efefef;
+    width: 300rpx;
+    /* height: 160rpx; */
+    border-radius: 10rpx;
+    display: flex;
+}
+.height_card{
+    /* background-color:red; */
+    padding: 20rpx;
+}
+.head_icon{
+    position: relative;
+    top: 60rpx;
+    right: -30rpx;
+    width: 70rpx;
+    height: 70rpx;
+}
+.modname{
+    display: flex;
+    height: 60rpx;
+    align-items: center;
+    font-size: 30rpx;
+    font-weight: 600;
+}
+.greenLine{
+  height: 40rpx;
+  width: 10rpx;
+  background-color: #00b451;
+}
+.cluliner{
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.van-field__placeholder{
+    text-align: end !important;
+}
+
+
+.head_girl{
+    width: 140rpx;
+    height: 140rpx;
+    position: absolute;
+    right: 20rpx;
+    top: -50rpx;
+    background-color: #00b451;
+    border-radius: 70rpx;
+    border: 7rpx solid white;
+    box-sizing: border-box;
+}
+.explain{
+    font-size: 24rpx;
+    color: gray;
+    width: 260rpx;
+    /* height: 120rpx; */
+    padding: 20rpx;
+    box-shadow: 5rpx 5rpx 20rpx rgba(199, 199, 204, 0.6) ;
+   margin-left: 80rpx;
+    position: absolute;
+    top: 80rpx;
+    z-index: 999;
+    background-color: white;
+}
+.explain::before{
+    content: '';
+    position: absolute;
+    /* width: 30rpx;
+    height: 30rpx; */
+    /* background-color: red; */
+    top: -25rpx;
+    left: 15rpx;
+    border:15rpx  solid transparent;
+   border-bottom-color: white;
+   
+}

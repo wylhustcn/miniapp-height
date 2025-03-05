@@ -1,0 +1,24 @@
+<!--index.wxml-->
+<view class="modname">
+    <view class="greenLine"></view>
+    <view style="margin-left: 20rpx;">身高曲线图</view>
+</view>
+<view class="container1">
+    <ec-canvas id="mychart-line" ></ec-canvas>
+    <view style="width: 100%;color: #666666;font-size: 25rpx;text-align: end;">年龄(岁)</view>
+   
+</view>
+<view class="conclusion">
+    <image src="../../images/common/record.png"></image>
+    <view>您当前的身高{{hleve}}
+        <text wx:if="{{hleve=='矮小'}}">(低于标准的{{percent}}%)有发育迟缓风险</text>
+        <text wx:elif="{{hleve=='偏矮'}}">(低于标准的{{percent}}%)有发育迟缓风险</text>
+        <text wx:elif="{{hleve=='正常'}}">注意营养均衡，加强身体锻炼</text>
+        <text wx:else>(高于标准的{{percent}}%) 有发育过快风险</text>
+    </view>
+</view>
+<view class='ckao'>
+    <view>*数据参考：</view>
+    <view>1.P3-P97为参考值，将身高从低到高依次排列</view>
+    <view>2.根据2005年九省/市儿童体格发育调查数据绘制身高曲线图</view>
+</view>

@@ -1,0 +1,64 @@
+.child{
+    display: flex;
+    width: 95%;
+    padding: 0rpx 10rpx;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10rpx;
+}
+
+.child_left{
+   display: flex;
+   align-items: center;
+}
+.child_avator{
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 40rpx;
+}
+.sex{
+    width: 30rpx;
+    height: 30rpx;
+}
+.child_right{
+    display: flex;
+    font-size: 30rpx;
+}
+.child_right view{
+    /* padding: 10rpx 20rpx; */
+    height: 60rpx;
+    box-sizing: border-box;
+    line-height: 60rpx;
+    width: 120rpx;
+}
+.delte{
+   color: gray;
+}
+
+.current{
+    border: 1rpx solid gray;
+    color: gray;
+    border-radius: 30rpx;
+    text-align: center;
+}
+.change{
+    /* border: 1rpx solid gray; */
+    color: white;
+    border-radius: 30rpx;
+    text-align: center;
+    background-color: #00B451;
+}
+.health_icon{
+    margin-right: 10rpx;
+    width: 40rpx;
+    height: 40rpx;
+}
+.health_age{
+    margin-top: 15rpx;
+    display: flex;
+    background-color: #ECF0EE;
+    border-radius: 10rpx;
+    font-size: 20rpx;
+    padding: 0rpx 10rpx 0rpx 0rpx;
+    align-items: center;
+}

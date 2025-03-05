@@ -1,0 +1,10 @@
+var filter={
+    abs:function(params){
+  return Math.abs(params)
+    },
+    flex:function(params){
+        var absparams=Math.abs(params)
+        return absparams.toFixed(1)
+    }
+}
+module.exports=filter

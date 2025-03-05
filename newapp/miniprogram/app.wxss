@@ -1,0 +1,65 @@
+page {
+    background: #efefef;
+   
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100vw;
+    /* overflow: hidden; */
+    box-sizing: border-box;
+}
+.top{
+    position: absolute;
+    width: 100%;
+    padding: 20rpx;
+    margin-top: 130rpx;
+    width: 100%;
+    box-sizing: border-box;
+}
+.card {
+    width: 720rpx;
+    border-radius: 20rpx;
+    padding: 30rpx 10rpx;
+    background-color: white;
+    box-sizing: border-box;
+}
+
+.head {
+    position: relative;
+    
+}
+
+.headimg {
+    float: left;
+    width: 100%;
+    height: 380rpx;
+    opacity: 0.8;
+}
+
+.tabBar {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    box-sizing: border-box;
+}
+
+.addbtn {
+    display: flex;
+    width: 720rpx;
+    border-radius: 40rpx;
+    height: 80rpx;
+    background-color: #00b451;
+    margin-top: 20rpx;
+    line-height: 80rpx;
+    text-align: center;
+    justify-content: center;
+    color: white;
+    margin-bottom: 30rpx;
+}

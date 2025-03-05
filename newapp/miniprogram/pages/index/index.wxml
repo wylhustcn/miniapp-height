@@ -1,0 +1,32 @@
+<image src="../../images/index/topbg.png" class="topbg"></image>
+<view class="container">
+    <view class="card" bindtap="totestHeight">
+        <view class="card_left">
+            <image src="../../images/index/IP-02@2x.png"></image>
+            <view class="left_text">
+                <view style="font-size: 30rpx;font-weight: 600;">周周测身高</view>
+                <view style="font-size: 28rpx;color: gray;">去测评</view>
+            </view>
+        </view>
+        <view class="card_right btn1">
+            进入
+        </view>
+    </view>
+    <view class="card" bindtap="toarchives">
+        <view class="card_left">
+            <image src="../../images/index/IP-02@2x(1).png"></image>
+            <view class="left_text">
+                <view style="font-size: 30rpx;font-weight: 600;">宝贝档案</view>
+                <view style="font-size: 28rpx;color: gray;">去记录</view>
+            </view>
+        </view>
+        <view class="card_right btn2">
+            进入
+        </view>
+    </view>
+   <view class="manager" bindtap="tomanage" wx:if="{{userInfo.isManager==true}}">
+   管理员后台
+ 
+   </view>
+   
+</view>

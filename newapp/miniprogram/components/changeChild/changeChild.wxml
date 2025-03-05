@@ -1,0 +1,32 @@
+
+<van-action-sheet show="{{ show }}" title="切换宝贝" bind:close="onClose">
+
+    <view class="showContent">
+        <view class="child" wx:for="{{childList}}" wx:key="{{item.childid}}">
+            <view class="child_left">
+                <image src="{{item.avatorUrl}}" class="child_avator" mode="aspectFill"></image>
+                <view style="margin-left: 20rpx">
+                    <view>
+                       <text style="font-weight: 600;font-size: 30rpx;">{{item.babyName}}</text>
+                      <image src="{{item.sex=='男'?'../../images/archives/boy.png':'../../images/archives/girl.png'}}" class="sex"></image>
+                    </view>
+                    <view class="health_age" >
+                    <image src="../../images/archives/35@2x.png" class="health_icon" />
+                    <view>{{item.dayinfo.lyear}}岁{{item.dayinfo.lmonth}}个月{{item.dayinfo.lday}}天</view>
+                </view>
+                </view>
+            </view>
+            <view class="child_right">
+                <view class="delte" bindtap="delete" data-id="{{item.childid}}">删除</view>
+                 <view class="current" wx:if="{{item.iscurrent}}">当前</view>
+                 <view class="change" bindtap="changeChild" wx:else  data-item="{{item}}">切换</view>
+            </view>
+        </view>
+
+        
+        <view style="height: 100rpx;"></view>
+    </view>
+</van-action-sheet>
+
+<van-dialog id="change"  confirm-button-color='#00B451'/>
+<van-dialog id="delete"  confirm-button-color='#00B451'/>

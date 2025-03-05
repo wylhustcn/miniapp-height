@@ -1,0 +1,22 @@
+<!--index.wxml-->
+<wxs module="filter" src='./filter.wxs'></wxs>
+<view class="modname">
+            <view class="greenLine"></view>
+            <view style="margin-left: 20rpx;">当前身高状态</view>
+        </view>
+        <view style="display: flex;align-items: center;font-size: 26rpx;margin-top: 10rpx;" wx:if="{{!is_high}}">
+            <image src="../../images/report/down.png" style="width: 30rpx;height: 30rpx;"></image>
+            <view><text style="color: #FFA74E;">低于</text>全国同龄平均身高({{avHeight}}) <text style="margin-left: 20rpx;">{{avHeight<=curHeight?'高':'矮'}}</text> <text style="font-size: 36rpx;color: #FFA74E;margin-left: 5rpx;font-weight: 600;">{{filter.tofex(avHeight-curHeight)}}cm</text></view>
+            <text></text>
+        </view>
+        <view style="display: flex;align-items: center;font-size: 26rpx;margin-top: 10rpx;" wx:else>
+            <image src="../../images/report/up.png" style="width: 30rpx;height: 30rpx;"></image>
+            <view><text style="color:#00B451;margin-right: 10rpx;">高于</text>全国<text style="margin-left: 20rpx;font-size: 36rpx;color:#00B451;font-weight: 600;">{{percent}}%</text> <text style="margin-left: 10rpx;">同龄的孩子({{filter.tofex(curHeight-avHeight)||0}}标准差)</text></view>
+            <text></text>
+        </view>
+<view class="container1">
+    <ec-canvas id="mychart-dom-line" id="mychart-line" ec="{{ ec }}"></ec-canvas>
+</view>
+<view class='ckao'>
+<view style="padding: 20rpx;">* 数据参考：根据2005年九省/市儿童体格发育调查研究制定，参考文献：中华儿科杂志，2005年7期。</view>
+</view>

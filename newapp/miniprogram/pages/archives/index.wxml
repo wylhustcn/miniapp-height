@@ -1,0 +1,184 @@
+<view class="head">
+    <image src="../../images/archives/bj@2x.png" class="headimg"/>
+    <getback title="宝贝档案"/>
+</view>
+<view class="container" >
+    <view class="tag"  bindtap="changebaby">切换宝贝</view>
+    <view class="card" style="margin-top: -50rpx; z-index: 1;padding-bottom: 20rpx;border-radius: 50rpx 20rpx 20rpx 20rpx;">
+      <block wx:if="{{userLogin==1}}">
+        <view class="child_info" >
+            <image src="{{childInfo.avatorUrl||parent.avatarUrl}}" class="head_img" bindtap="changeAvator" mode="aspectFill" ></image>
+            <image src="../../images/archives/edit.png" style="width: 30rpx;height: 30rpx; position: absolute;left: 100rpx;top: 60rpx;" bindtap="changeAvator"></image>
+            <view class="childinfo">
+                <view class="child_info_left">
+
+                    <view >
+                        <view style="display: flex; align-items: center;">
+                            <view style="font-weight: 600;">{{babyName||'未添加'}}</view>
+                            <image src="{{sex=='男'?'../../images/archives/boy.png':'../../images/archives/girl.png'}}" style="height: 24rpx;width: 24rpx;"></image>
+                        </view>
+                        <view style="display: flex; align-items: center;margin-top: 10rpx;">
+                            <image src="../../images/archives/35@2x.png" style="height: 30rpx;width: 30rpx;"></image>
+                            <view style="font-size: 24rpx; background-color: #efefef;padding: 3rpx 6rpx;border-radius: 20rpx;">{{ageObj.lyear||0}}岁{{ageObj.lmonth||0}}个月{{ageObj.lday||0}}天</view>
+                        </view>
+                    </view>
+
+                </view>
+                <view class="child_info_right">
+                    <view class="height_btn" bindtap="toharchives">
+                        <view>身高档案</view>
+                        <view style="display: block;margin-left: 15rpx;height: 0rpx;width: 0rpx;border: 10rpx solid transparent; border-left-color: white;"></view>
+                    </view>
+                </view>
+            </view>
+
+        </view>
+      </block>
+      <block wx:else>
+        <view class="child_info" >
+            <image src="../../images/common/IP-04@2x.png" class="head_img" bindtap="changeAvator" mode="aspectFill" ></image>
+           
+            <view class="childinfo">
+                <view class="child_info_left">
+
+                    <view >
+                        <view style="display: flex; align-items: center;">
+                            <view style="font-weight: 600;" bindtap="tologin">未登录</view>
+                        </view>
+                        
+                    </view>
+
+                </view>
+                <view class="child_info_right">
+                    <view class="height_btn" bindtap="toharchives">
+                        <view>身高档案</view>
+                        <view style="display: block;margin-left: 15rpx;height: 0rpx;width: 0rpx;border: 10rpx solid transparent; border-left-color: white;"></view>
+                    </view>
+                </view>
+            </view>
+
+        </view>
+      </block>
+        
+
+        <view class="height_weight">
+            <view class="height_item">
+                <image src="../../images/archives/IP-02@2x.png" class="bgimg1"></image>
+                <view class="weight">
+                    <text style="font-weight: 600;font-size: 40rpx;">{{parent.curheight||0}}</text><text style="font-weight: 600;font-size: 28rpx;margin-left: 5rpx;">cm</text>
+                    <view style="display: flex;align-items: center;margin-top: 10rpx;">
+                        <image src="../../images/archives/height.png" style="width: 40rpx;height: 40rpx;"></image>
+                        <text style="font-size:26rpx;margin-left:10rpx;color:gray">实测身高</text>
+                    </view>
+                </view>
+            </view>
+            <view class="height_item">
+                <image src="../../images/archives/17@2x.png" class="bgimg1"></image>
+                <view class="weight">
+                    <text style="font-weight: 600;font-size: 40rpx;">{{parent.curweight||0}}</text><text style="font-weight: 600;font-size: 28rpx;margin-left: 5rpx;">kg</text>
+                    <view style="display: flex;align-items: center;margin-top: 10rpx;">
+                        <image src="../../images/archives/weight.png" style="width: 40rpx;height: 40rpx;"></image>
+                        <text style="font-size:26rpx;margin-left:10rpx;color:gray">实测体重</text>
+                    </view>
+                </view>
+            </view>
+           
+        </view>
+    </view>
+    <view class="card" style="margin-top: 20rpx;">
+        <view class="modname">
+            <view class="greenLine"></view>
+            <view style="margin-left: 10rpx;">当前生长发育等级</view>
+            <van-icon name="question-o" catchtap="showlog" style="margin-left: 10rpx;" color='gray' size='18'/>
+        </view>
+        <view class="cluliner">
+            <view class="clunum">
+                <view class="numline" wx:for="{{curList}}">{{item}}</view>
+                
+            </view>
+            <view class="cluline">
+                
+                <view class="line " style="background-color: #cbf0df; display: flex;justify-content: center;align-items: center;">
+                    <image src="../../images/archives/rocket.png" style="width: 80rpx;height: 80rpx;" wx:if="{{grade=='下'}}"></image>
+                </view>
+                <view class="line " style="background-color: #a4dbbb;display: flex;justify-content: center;align-items: center;">
+                    <image src="../../images/archives/rocket.png" style="width: 80rpx;height: 80rpx;" wx:if="{{grade=='中下'}}"></image>
+                </view>
+                <view class="line " style="background-color: #64d796; display: flex;justify-content: center;align-items: center;">
+                    <image src="../../images/archives/rocket.png" style="width: 80rpx;height: 80rpx;" wx:if="{{grade=='中'}}"></image>
+                </view>
+                <view class="line " style="background-color: #34c270; display: flex;justify-content: center;align-items: center;">
+                    <image src="../../images/archives/rocket.png" style="width: 80rpx;height: 80rpx;" wx:if="{{grade=='中上'}}"></image>
+                </view>
+                <view class="line " style="background-color: #00b751; display: flex;justify-content: center;align-items: center;">
+                    <image src="../../images/archives/rocket.png" style="width: 80rpx;height: 80rpx;" wx:if="{{grade=='上'}}"></image>
+                </view>
+            </view>
+            <view class="cluline" style="font-size: 24rpx;margin-top: 20rpx;">
+                <view class="line {{grade=='下'?'active':''}}">下</view>
+                <view class="line {{grade=='中下'?'active':''}}" >中下</view>
+                <view class="line {{grade=='中'?'active':''}}">中</view>
+                <view class="line {{grade=='中上'?'active':''}}">中上</view>
+                <view class="line {{grade=='上'?'active':''}}">上</view>
+            </view>
+            <view class="lineer"></view>
+            <view style="display: flex;align-items: center;margin: 20rpx;">
+               
+                <view style="display: flex;margin-left: 20rpx;">
+                    
+                    <text style="color: gray; font-size: 28rpx;">生长发育等级<text style="font-weight: 600; font-size: 32rpx;color: black;">{{grade}}</text></text>
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <view class="card" style="margin-top: 20rpx;">
+        <view class="modname">
+            <view class="greenLine"></view>
+            <view style="margin-left: 10rpx;">遗传身高</view>
+            
+        </view>
+        <view class="cluliner">
+            <view class="parentHeight">
+             <view>父亲身高(cm)</view>
+             <view>{{fheight||0}} <text style="margin-left:5rpx;">cm</text></view>
+            </view>
+            <view class="parentHeight">
+             <view>母亲身高(cm)</view>
+             <view>{{mheight||0}} <text style="margin-left:5rpx;">cm</text></view>
+            </view>
+            <view class="lineer"></view>
+            <view style="display: flex;align-items: center;margin: 20rpx;">
+                <view style="display: flex;align-items: center;height: 40rpx;">
+                    <image src="../../images/archives/6@2x.png" style="width: 50rpx;height: 50rpx;margin-right: 10rpx;"></image>
+                    <text style="color: gray; font-size: 28rpx;">遗传身高<text style="font-weight: 600; font-size: 32rpx;color: black;">
+                    {{herheight}}(±7cm)</text></text>
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <view class="addbtn" bindtap="addChild">添加宝贝</view>
+</view>
+<changeChild id="showChangeChild" bindrefresh="refresh"></changeChild>
+<van-popup show="{{ showlog }}" bind:close="onClose" round>
+    <view class="card" style="border-radius: 0rpx;padding: 0rpx;width: 600rpx;">
+     <view style="display: flex;justify-content: flex-end;padding: 20rpx;">
+        <van-icon name="close" size='20' bindtap="onClose"/>
+     </view>
+    <view class="title"> 孩子身高体重参考标准</view>
+            <view class="des1">孩子的体重和身高一般分为五个档次(等级)</view>
+            <view class="des2">下等、中下、中等、中上、上等</view>
+
+            <view class="des3">
+                <view class="des3card">
+                    <view style="font-size:24rpx;"><text style="padding: 0rpx 5rpx;color: #00B451;background-color: #a5e9c3;border-radius: 10rpx;">P3</text> 下等</view>
+                    <view style="font-size:24rpx;"><text style="padding: 0rpx 5rpx;color: #00B451;background-color: #a5e9c3;border-radius: 10rpx;">P10-P25</text> 中下</view>
+                    <view style="font-size:24rpx;"><text style="padding: 0rpx 5rpx;color: #00B451;background-color: #a5e9c3;border-radius: 10rpx;">P50</text> 中等</view>
+                    <view style="font-size:24rpx;"><text style="padding: 0rpx 5rpx;color: #00B451;background-color: #a5e9c3;border-radius: 10rpx;">P75-P97</text> 中上等</view>
+                    <view style="font-size:24rpx;"><text style="padding: 0rpx 5rpx;color: #00B451;background-color: #a5e9c3;border-radius: 10rpx;">P97+</text> 上等</view>
+                </view>
+            </view>
+            <view style="color: #979797;font-size: 24rpx;margin: 20rpx;">3-15岁男女儿童身高参考，根据此标准，得出实际身高与国家标准身高对比曲线图</view>
+        </view>
+</van-popup>

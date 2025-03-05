@@ -1,0 +1,73 @@
+<view class="head">
+    <image src="../../../images/harchives/bj@2x.png" class="headimg" ></image>
+    <getback title="宝贝身高档案" />
+
+    <view class="top">
+
+        <view class="head_imgInfo">
+            <image src="{{childInfo.avatorUrl||parent.avatarUrl}}" class="head_logo"  mode="aspectFill"/>
+            <view class="name_age_sex">
+                <view class="name_sex">
+                    <view>{{babyName||'未添加'}}</view>
+                    <image src="{{sex=='男'?'../../../images/archives/boy.png':'../../../images/archives/girl.png'}}" class="sex_icon"></image>
+                </view>
+                <view class="health_age">
+                    <image src="../../../images/archives/35@2x.png" class="health_icon" />
+                    <view>{{ageObj.lyear||0}}岁{{ageObj.lmonth||0}}个月{{ageObj.lday||0}}天</view>
+                </view>
+            </view>
+        </view>
+        <view class="weight_height">
+            <view class="height_info">
+                <view style="font-weight: 600;">{{herheight||0}}cm</view>
+                <view style="font-size: 20rpx;">遗传身高(±7cm)</view>
+            </view>
+            <view class="height_info" style="margin-left: 30rpx;">
+                <view style="font-weight: 600;">{{wheight||0}}cm</view>
+                <view style="font-size: 20rpx;">期望成年身高</view>
+            </view>
+        </view>
+    </view>
+    <view class="tag" bindtap="changebaby">切换宝贝</view>
+</view>
+<view class="container">
+    <view class="card" style="margin-top: 20rpx;">
+        <view class="title">
+            <view class="greenline"></view>
+            <view>身高涨幅</view>
+        </view>
+        <view class="chartBox">
+            <view class="boxtop">
+                <view class="timeline">{{beginDate}}-{{endDate}}</view>
+                <view class="hasgrow">近{{days}}天长高<text style="color: #00B451;font-size: 42rpx;">{{heightdif}}cm</text><text style="color: #00B451;background-color: #E6FAEF;margin-left: 10rpx;">正常</text></view>
+            </view>
+        </view>
+        <view class="heightchart">
+            <ec-canvas id="heightChart"></ec-canvas>
+        </view>
+        
+
+    </view>
+
+    <view class="card" style="margin-top: 20rpx;">
+        <view class="title">
+            <view class="greenline"></view>
+            <view>当前对比身高</view>
+        </view>
+        <view class="chartBox">
+            <view class="boxtop">
+                <view class="timeline">{{sex}}</view>
+                <view class="hasgrow">身高百分比等于<text style="color: #00B451;font-size: 42rpx;">{{percent}}%</text>
+                    <text style="color: #00B451;background-color: #E6FAEF;margin-left: 10rpx;" >{{hleve}}</text>
+                    
+                </view>
+            </view>
+        </view>
+        <view class="varheightchart">
+            <ec-canvas id="vaheightChart"></ec-canvas>
+        </view>
+    </view>
+
+    <view style="margin-bottom: 100rpx;"></view>
+</view>
+<changeChild id="showChangeChild" bindrefresh="refresh"></changeChild>

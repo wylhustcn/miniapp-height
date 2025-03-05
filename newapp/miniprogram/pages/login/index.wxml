@@ -1,0 +1,14 @@
+<view class="container">
+ <image src="../../images/login/bgl.png"></image>
+
+ <view class="login" bindtap="login" wx:if="{{clicked==1}}">微信用户一键登录</view>
+ <label wx:if="{{clicked==2}}">
+<button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" hidden="true"></button>
+    <view class="login">绑定手机号</view>
+ </label>
+ <view class="check" bindtap="choose">
+<checkbox class="radio" checked="{{checked}}"/><view>已阅读并同意<text style="color: #00b451;">《服务协议</text>和<text style="color: #00b451;">《隐私政策》</text></view>
+ </view>
+
+
+</view>

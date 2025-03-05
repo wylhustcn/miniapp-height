@@ -1,0 +1,29 @@
+page{
+    background-color: #fff;
+}
+.container image{
+    margin-top: 200rpx;
+    width: 400rpx;
+    height: 240rpx;
+}
+
+.login{
+    margin-top: 100rpx;
+    background-color: #00b451;
+    width: 600rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    text-align: center;
+    font-size: 32rpx;
+    color: white;
+    border-radius: 40rpx;
+}
+.radio{
+transform: scale(0.7,0.7);
+}
+.check{
+    margin-top: 20rpx;
+    display: flex;
+    font-size: 28rpx;
+    align-items: center;
+}

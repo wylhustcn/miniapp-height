@@ -1,0 +1,72 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/login/index",
+    "pages/harchives/index",
+    "pages/report/index",
+    "pages/mine/index",
+    "pages/archives/index",
+    "pages/testHeight/index",
+    "pages/addshow/index",
+    "pages/addsuccess/index",
+    "pages/showcontact/index",
+    "pages/showgz/index",
+    "pages/webview/index"
+  ],
+  "subpackages": [
+    {
+      "root": "packageA",
+      "pages": [
+        "pages/cutlist/cutlist",
+        "pages/cartlist/cartlist"  
+      ]
+    }
+  ],
+  "window": {
+   
+   
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "coridal999",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#F6F6F6"
+  },
+  "tabBar": {
+      "color": "#cdcdcd",
+      "selectedColor": "#00b451",
+      "list": [{
+          "pagePath": "pages/index/index",
+          "text": "首页",
+          "iconPath": "images/tabbar/home.png",
+          "selectedIconPath": "images/tabbar/chome.png"
+      },
+      {
+        "pagePath": "pages/mine/index",
+        "text": "我的",
+        "iconPath": "images/tabbar/mine.png",
+        "selectedIconPath": "images/tabbar/cmine.png"
+    }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "van-cell": "@vant/weapp/cell/index",
+    "van-cell-group": "@vant/weapp/cell-group/index",
+    "van-field": "@vant/weapp/field/index",
+    "van-action-sheet": "@vant/weapp/action-sheet/index",
+    "van-dialog": "@vant/weapp/dialog/index",
+    "getback":"./components/getback/getback",
+    "changeChild":"./components/changeChild/changeChild",
+    "bhechart":"./components/bhechart/bhechart",
+    "bwechart":"./components/bwechart/bwechart",
+    "hstate":"./components/hstate/hstate",
+     "ycheight":"./components/ycheight/ycheight",
+    "van-picker": "@vant/weapp/picker/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "van-empty": "@vant/weapp/empty/index",
+    "van-popup": "@vant/weapp/popup/index",
+    "van-datetime-picker": "@vant/weapp/datetime-picker/index"
+   
+  }
+
+ 
+}

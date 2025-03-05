@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+        "changeChild":"../../components/changeChild/changeChild"
+    },
+    "navigationStyle": "custom",
+    "navigationBarBackgroundColor": "#df4a44"
+  }

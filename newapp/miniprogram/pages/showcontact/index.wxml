@@ -1,0 +1,36 @@
+<view class="head">
+    <view class="tabBar" style="margin-top:{{capsuleInfo.top}}px;height: {{capsuleInfo.height}}px;">
+        <text>我的</text>
+    </view>
+</view>
+<view class="container">
+    
+    <image src="../../images/show/bj@2x.png"></image>
+    <van-icon name="close"  size="40px" style="position: absolute;z-index: 2; top: 0rpx;right: 30rpx;color: rgb(189, 185, 185);" bindtap="close"/>
+    <view class="context">
+      
+        <view class="recontent ">
+           <block wx:if="{{from==1}}">
+            <view class="title">了解更多宝贝成长轨迹</view>
+            <view class="title">可添加科学身高助手企业微信</view>
+           </block>
+           <block wx:if="{{from==2}}">
+            <view class="title">添加身高助手</view>
+            <view style="font-size: 28rpx;">微信号：MilkHightenCHN</view>
+           </block>
+           <view style="position: relative;width: 300rpx;height: 300rpx;display: flex;justify-content: center;align-items: center;margin-top: 20rpx;">
+            <image src="../../images/common/nbox.png" style="width: 300rpx;height: 300rpx;position: absolute;"/>
+            <image src="../../images/common/wechat.jpg" style="width: 250rpx;height: 250rpx;position: absolute;" show-menu-by-longpress="../../images/common/wechat.jpg"></image>
+          
+           </view>
+         
+
+            <view class="conbtn">
+            <view class="cancel" bindtap="copy">复制微信号</view>
+            <label>
+               
+                <view class="confrim" bindtap="tablong">长按扫一扫识别</view></label>
+            </view>
+        </view>
+    </view>
+</view>

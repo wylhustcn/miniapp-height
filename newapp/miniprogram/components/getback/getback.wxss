@@ -1,0 +1,17 @@
+/* components/geback/getback.wxss */
+
+.tabBar {
+    position: absolute;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    box-sizing: border-box;
+    
+}
+.arrow{
+    width: 50rpx;
+    height: 50rpx;
+    margin-left: 30rpx;
+}

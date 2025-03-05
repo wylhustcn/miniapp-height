@@ -1,0 +1,240 @@
+.leftarrow{
+    font-size: 40rpx;
+
+}
+.tag{
+    position: absolute;
+    top: 120px;
+    right: 0rpx;
+    line-height: 50rpx;
+    padding: 0rpx 15rpx;
+  
+    height: 50rpx;
+    
+    background-color: rgb(242,251,246);
+    border-radius: 25rpx 0rpx 0rpx 25rpx;
+    font-size: 28rpx;
+
+}
+.child_info{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    height: 120rpx;
+}
+.child_info_left{
+    
+  display: flex;
+    width: 300rpx;
+    align-items: center;
+
+}
+.childinfo{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    height: 100rpx;
+}
+.head_img{
+    width: 160rpx;
+    height: 160rpx;
+    position: relative;
+   left: -13rpx;
+   top: -50rpx ;
+   border: 20rpx solid white;
+   border-radius: 80rpx;
+   box-sizing: border-box;
+   flex-shrink: 0;
+   /* background-color: #00b451; */
+}
+.child_info_right{
+    
+    width: 200rpx;
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.height_btn{
+    display: flex;
+    /* width: 100%; */
+    background-color: #00b451;
+    height: 50rpx;
+    line-height: 50rpx;
+    align-items: center;
+    color: white;
+    padding: 0rpx 15rpx;
+    justify-content: center;
+    font-size: 26rpx;
+    border-radius: 25rpx;
+
+}
+.height_weight{
+    width: 100%;
+    display: flex;
+   justify-content: space-around;
+}
+.height_item{
+   position: relative;
+}
+.bgimg1{
+   
+    width: 330rpx;
+height: 140rpx;
+}
+.weight{
+    width: 330rpx;
+    height: 160rpx;
+    margin-top: -160rpx;
+    position: absolute;
+    box-sizing: border-box;
+    padding: 20rpx;
+}
+.height_card{
+    /* background-color:red; */
+    padding: 20rpx;
+}
+.head_icon{
+    position: relative;
+    top: 60rpx;
+    right: -30rpx;
+    width: 70rpx;
+    height: 70rpx;
+}
+.active{
+    color:#a4dbbb;
+}
+
+.modname{
+    display: flex;
+    height: 60rpx;
+    align-items: center;
+    font-size: 30rpx;
+    font-weight: 600;
+}
+.greenLine{
+  height: 40rpx;
+  width: 10rpx;
+  background-color: #09b64b;
+}
+.cluliner{
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.cluline{
+    width: 660rpx;
+    height: 30rpx;
+    display: flex;
+    /* background-color: skyblue; */
+    box-sizing: border-box;
+    margin-top: 10rpx;
+    position: relative;
+}
+.clunum{
+    width: 528rpx;
+    height: 60rpx;
+    display: flex;
+    box-sizing: border-box;
+    margin-top: 20rpx;
+    font-size: 28rpx;
+    color: gray;
+}
+.numline{
+    width: 132rpx;
+    box-sizing: border-box;
+    height: 30rpx;
+    text-align: center;
+    position: relative;
+}
+.numline:after{
+    content: '';
+   position: absolute;
+   bottom: -33rpx;
+    left: 50%;
+    width: 3rpx;
+    margin-left: 1rpx;
+    height: 30rpx;
+    background-color: #dde093;
+  
+}
+.line{
+    width: 132rpx;
+    box-sizing: border-box;
+    height: 40rpx;
+    text-align: center;
+}
+.line:first-child{
+    border-radius: 15rpx 0rpx 0rpx 15rpx;
+}
+.line:last-child{
+    border-radius: 0rpx 15rpx 15rpx 0rpx;
+}
+.line1{
+    background-color: skyblue;
+}
+.lineer{
+    width: 660rpx;
+    height: 2rpx;
+    display: flex;
+    background-color: #ecf0ee;
+    box-sizing: border-box;
+    margin-top: 30rpx;
+}
+.parentHeight{
+    width: 660rpx;
+    display: flex;
+    justify-content:space-between;
+    font-size: 28rpx;
+    margin-top: 10rpx;
+}
+
+.des3card{
+    /* width: 100%; */
+    height: 100%;
+    background-color: #ECF0EE;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    border-radius: 20rpx;
+    padding: 20rpx;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+}
+.des3card view{
+    width: 260rpx;
+    flex-shrink: 0;
+    margin-top: 10rpx;
+}
+
+.des1{
+    font-size: 24rpx;
+    color: #979797;
+    margin: 20rpx 20rpx 0rpx 20rpx;
+}
+.des2{
+    font-size: 24rpx;
+    font-weight: 600;
+    margin: 0rpx 20rpx 0rpx 20rpx;
+}
+
+.des3{
+    width: 600rpx;
+    /* height: 160rpx; */
+    padding: 20rpx;
+   display: flex;
+    box-sizing: border-box;
+  justify-content: center;
+
+}
+.title{
+    width: 100%;
+    text-align: center;
+    font-size: 28rpx;
+    font-weight: 600;
+    /* margin-top: 20rpx; */
+}

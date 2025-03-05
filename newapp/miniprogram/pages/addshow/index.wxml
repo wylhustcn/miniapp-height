@@ -1,0 +1,28 @@
+<view class="head">
+    <view class="tabBar" style="margin-top:{{capsuleInfo.top}}px;height: {{capsuleInfo.height}}px;">
+        <text>宝贝身高档案</text>
+    </view>
+</view>
+<view class="container">
+
+    <image src="../../images/show/bj@2x.png"></image>
+    <view class="context">
+        <view class="recontent ">
+            <view class="title">添加身高记录</view>
+            <picker bindchange="bindHeightChange" mode="multiSelector" range="{{CDHeight}}" value="{{sexItem.type==1?[6,6,6,6]:[7,7,7,7]}}">
+                <van-cell title="宝贝身高(cm)" is-link value="{{curheight==''?'请选择':curheight}}"  required/>
+            </picker>
+        
+            <picker bindchange="bindWeightChange" mode="multiSelector" range="{{CDWeight}}" value="{{sexItem.type==1?[15,3,3,3]:[16,2,2,2]}}">
+                <van-cell title="宝贝体重(kg)" is-link value="{{curweight==''?'请选择':curweight}}"  required/>
+                
+            </picker>
+            <van-cell title="测量时间"  value="{{nowdy}}" />
+
+            <view class="conbtn">
+            <view class="cancel" bindtap="cancel">取消</view>
+            <view class="confrim" bindtap="submit">保存</view>
+            </view>
+        </view>
+    </view>
+</view>

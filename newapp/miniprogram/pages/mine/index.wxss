@@ -1,0 +1,145 @@
+/* pages/mine/index.wxss */
+page{
+    background-color: white;
+}
+.head_top{
+    background-color: #ECF0EE;
+  
+}
+
+.bgimg{
+    
+    position: relative;
+    width: 100%;
+    height: 240rpx;
+    display: flex;
+    justify-content: center;
+    
+}
+.headimg{
+    height: 100%;
+    width: 95%;
+}
+.changebaby{
+    position: absolute;
+    top: 82rpx;
+    right: 0;
+    width: 160rpx;
+    height: 100rpx;
+    color:#078540 ;
+    font-size: 28rpx;
+    font-weight: 600;
+}
+.avatar_info{
+    position: absolute;
+    /* background-color: rebeccapurple; */
+    width: 95%;
+    height: 240rpx;
+    display: flex;
+    align-items: center;
+}
+.avator{
+    width: 120rpx;
+    height: 120rpx;
+    border: 5rpx solid white;
+    border-radius: 50%;
+    margin-left: 20rpx;
+}
+.baby{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+}
+.baby image{
+    width: 30rpx;
+    height: 30rpx;
+}
+.juarr{
+    margin-top: -30rpx;
+    height: 60rpx;
+    width: 100%;
+    /* background-color: rebeccapurple; */
+    z-index: 1;
+}
+.jfgj{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+}
+.jfgj .item{
+    width: 340rpx;
+    height: 130rpx;
+    position: relative;
+}
+.item .bg{
+    width: 340rpx;
+    height: 130rpx;
+}
+.item .text{
+    top: 0;
+    position: absolute;
+    width: 340rpx;
+    height: 130rpx;
+    /* background-color: red; */
+    color: #078540;
+    font-size: 28rpx;
+    font-weight: 600;
+    box-sizing: border-box;
+    padding: 20rpx;
+}
+.text image{
+    width: 30rpx;
+    height: 30rpx;
+}
+.modname{
+    margin-top: 20rpx;
+    display: flex;
+    height: 60rpx;
+    align-items: center;
+    font-size: 30rpx;
+    font-weight: 600;
+    width: 95%;
+}
+.greenLine{
+  height: 40rpx;
+  width: 10rpx;
+  background-color: #00b451;
+}
+.banner{
+    margin-top: 10rpx;
+    width: 95%;
+    height: 280rpx;
+    border-radius: 20rpx;
+    text-align: center;
+}
+.banner image{
+    width: 100%;
+    height: 100%;
+    border-radius: 20rpx;
+}
+.err{
+    width: 200rpx;
+    height: 200rpx;
+}
+
+.kxbtn{
+    margin-top: 60rpx;
+    width: 95%;
+    height: 80rpx;
+    background-color: #ECF0EE;
+    border-radius: 20rpx;
+    display: flex;
+    padding: 0rpx 20rpx;
+    box-sizing: border-box;
+    justify-content: space-between;
+    align-items: center;
+}
+.kxbtn image{
+    width: 40rpx;
+    height: 40rpx;
+}
+.kxbtn_left{
+    display: flex;
+    align-items: center;
+}

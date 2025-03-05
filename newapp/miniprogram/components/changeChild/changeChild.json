@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "bhechart": "../bhechart/bhechart",
+    "bwechart": "../bwechart/bwechart"
+  }
+}

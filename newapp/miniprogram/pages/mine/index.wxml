@@ -1,0 +1,90 @@
+<view class="head_top">
+    <view class="bgimg">
+        <image src="../../images/mine/16.png" class="headimg"></image>
+        <view class="avatar_info">
+        <block wx:if="{{userLogin==1}}">
+            <image src="{{childInfo.avatorUrl||parent.avatarUrl}}" class="avator" mode="aspectFill"></image>
+        </block>
+        <block wx:else>
+            <image src="../../images/common/IP-04@2x.png" class="avator" mode="aspectFill"></image>
+        </block>
+            
+            <view style="margin-left: 20rpx;">
+            <block wx:if="{{userLogin==1}}">
+                <view class="baby" >
+                    <view style="font-size: 32rpx; color: white;font-weight: 600;">{{childInfo.babyName||'未添加'}}</view>
+                    <image src="{{childInfo.sex=='男'?'../../images/archives/boy.png':'../../images/archives/girl.png'}}" style="margin-left: 10rpx;"></image>
+                </view>
+                <view class="baby" style="margin-top: 8rpx;">
+                    <view style="font-size: 28rpx;color: white;">我的积分 <text>{{parent.tatolGrade}}</text></view>
+                </view>
+            </block>
+            <block wx:else>
+            
+                <view class="baby" >
+                    <view style="font-size: 32rpx; color: white;font-weight: 600;" bindtap="tologin">未登录</view>
+                </view>
+            </block>
+               
+               
+            </view>
+        </view>
+        <view class="changebaby"  bindtap="changebaby">切换宝贝</view>
+    </view>
+</view>
+<image src="../../images/mine/juarr.png" class="juarr"></image>
+<view class="container">
+    <view class="jfgj">
+        <view class="item">
+            <image src="../../images/mine/jf.png" class="bg"/>
+            <view class="text">
+            <view >积分商城</view>
+            <image src="../../images/mine/arrow1.png"></image>
+            </view>
+        </view>
+        <view class="item"  data-idindex="1"  bindtap="showContact">
+            <image src="../../images/mine/gj.png" class="bg"/>
+            <view class="text">
+            <view >宝贝成长轨迹</view>
+            <image src="../../images/mine/arrow1.png"></image>
+            </view>
+        </view>
+    </view>
+
+    <view class="modname">
+        <view class="greenLine"></view>
+        <view style="margin-left: 10rpx;">我的活动</view>
+    </view>
+    <view class="banner" bindtap="toweb">
+       <image src="cloud://cloud1-3gv9sq4hb66658b5.636c-cloud1-3gv9sq4hb66658b5-1313608868/images/a.jpg"></image>
+    </view>
+
+
+    <!-- <view class="modname">
+        <view class="greenLine"></view>
+        <view style="margin-left: 10rpx;">我的任务</view>
+    </view>
+    <block>
+        <image src="../../images/mine/err.png" class="err" />
+        <text style="font-size: 24rpx;color: gray;">暂无发布任务，敬请期待</text>
+    </block> -->
+
+    <view class="kxbtn" data-idindex="2"  bindtap="showContact">
+        <view class="kxbtn_left"   >
+            <image src="../../images/mine/server.png" />
+            <text style="font-size: 30rpx;margin-left: 5rpx;">科学长高助手</text>
+        </view>
+        <image src="../../images/mine/arrow.png"></image>
+    </view>
+    <view class="kxbtn" data-idindex="2"  bindtap="showgz" style="margin-top: 20rpx;">
+        <view class="kxbtn_left"   >
+            <image src="../../images/common/like.png" />
+            <text style="font-size: 30rpx;margin-left: 5rpx;">关注服务号</text>
+        </view>
+        <image src="../../images/mine/arrow.png"></image>
+    </view>
+   
+    <view style="height: 100rpx;"></view>
+</view>
+
+<changeChild id="showChangeChild" bindrefresh="refresh"></changeChild>
