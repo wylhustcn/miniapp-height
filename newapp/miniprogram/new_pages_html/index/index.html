@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>首页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: white;
+            padding-bottom: 60px; /* Space for the tabbar */
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .topbg {
+            margin-top: 15px;
+            width: 300px;
+            height: 160px;
+            margin-left: 25px;
+        }
+        
+        .card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 15px;
+            width: 330px;
+            height: 80px;
+            border-radius: 50px;
+            box-sizing: border-box;
+            padding: 0 10px;
+        }
+        
+        .card:first-of-type {
+            background-color: #E0F6EA;
+            margin-top: 40px;
+        }
+        
+        .card:nth-of-type(2) {
+            background-color: rgba(254, 221, 65, 0.2);
+        }
+        
+        .card_left {
+            display: flex;
+            align-items: center;
+        }
+        
+        .card_left img {
+            width: 50px;
+            height: 50px;
+        }
+        
+        .left_text {
+            margin-left: 10px;
+        }
+        
+        .card_right {
+            width: 70px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border-radius: 15px;
+            color: white;
+            font-size: 16px;
+        }
+        
+        .btn1 {
+            background-image: linear-gradient(to right, #00DB89, #00B451);
+        }
+        
+        .btn2 {
+            background-image: linear-gradient(to right, #FEDD41, #FFC206);
+        }
+        
+        .manager {
+            width: 130px;
+            background-color: #00B451;
+            color: white;
+            line-height: 30px;
+            text-align: center;
+            margin-top: 70px;
+            height: 30px;
+            box-sizing: border-box;
+            border-radius: 15px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+        
+        /* Tabbar styles */
+        .tabbar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background-color: #fff;
+            display: flex;
+            border-top: 1px solid #eee;
+            display: none;
+        }
+        
+        .tab-item {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #cdcdcd;
+            font-size: 12px;
+        }
+        
+        .tab-item.active {
+            color: #00b451;
+        }
+        
+        .tab-item img {
+            width: 24px;
+            height: 24px;
+            margin-bottom: 3px;
+        }
+        
+        /* Hover effects */
+        .card:hover {
+            transform: scale(1.02);
+            transition: transform 0.2s ease;
+        }
+        
+        .card_right:hover {
+            opacity: 0.9;
+        }
+        
+        .manager:hover {
+            opacity: 0.9;
+        }
+        
+        .tab-item:hover {
+            opacity: 0.8;
+        }
+        
+        /* Carousel styles */
+        .carousel {
+            width: 100%;
+            max-width: 350px;
+            height: 180px;
+            margin: 20px auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            display: none;
+        }
+        
+        .carousel-inner {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        
+        .carousel-item {
+            min-width: 100%;
+            height: 100%;
+        }
+        
+        .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .carousel-indicators {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 5px;
+        }
+        
+        .indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+        }
+        
+        .indicator.active {
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <img src="../../images/index/topbg.png" class="topbg" alt="顶部背景">
+    
+    <div class="container">
+        <!-- 功能入口卡片 -->
+        <div class="card" id="testHeight" onclick="window.location.href='../testHeight/testHeight.html'">
+            <div class="card_left">
+                <img src="../../images/index/IP-02@2x.png" alt="测身高图标">
+                <div class="left_text">
+                    <div style="font-size: 15px; font-weight: 600;">遗传身高计算</div>
+                    <div style="font-size: 14px; color: gray;">去测评</div>
+                </div>
+            </div>
+            <div class="card_right btn1">
+                进入
+            </div>
+        </div>
+        
+        <div class="card" id="archives">
+            <div class="card_left">
+                <img src="../../images/index/IP-02@2x(1).png" alt="档案图标">
+                <div class="left_text">
+                    <div style="font-size: 15px; font-weight: 600;">生长曲线评估</div>
+                    <div style="font-size: 14px; color: gray;">去记录</div>
+                </div>
+            </div>
+            <div class="card_right btn2">
+                进入
+            </div>
+        </div>
+        
+        <div class="card" id="growthAdvice">
+            <div class="card_left">
+                <img src="../../images/index/IP-02@2x.png" alt="建议图标">
+                <div class="left_text">
+                    <div style="font-size: 15px; font-weight: 600;">生长发育建议</div>
+                    <div style="font-size: 14px; color: gray;">获取建议</div>
+                </div>
+            </div>
+            <div class="card_right btn1">
+                进入
+            </div>
+        </div>
+        
+        <!-- 轮播图 -->
+        <div class="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item">
+                    <img src="../../images/common/box.png" alt="轮播图1">
+                </div>
+                <div class="carousel-item">
+                    <img src="../../images/common/gz.jpg" alt="轮播图2">
+                </div>
+                <div class="carousel-item">
+                    <img src="../../images/common/wechat.jpg" alt="轮播图3">
+                </div>
+            </div>
+            <div class="carousel-indicators">
+                <div class="indicator active"></div>
+                <div class="indicator"></div>
+                <div class="indicator"></div>
+            </div>
+        </div>
+        
+
+    </div>
+    
+    <!-- 底部导航栏 -->
+    <div class="tabbar">
+        <div class="tab-item active">
+            <img src="../../images/tabbar/chome.png" alt="首页">
+            <span>首页</span>
+        </div>
+        <div class="tab-item">
+            <img src="../../images/tabbar/mine.png" alt="我的">
+            <span>我的</span>
+        </div>
+    </div>
+    
+    <script>
+        // 轮播图功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const carouselInner = document.querySelector('.carousel-inner');
+            const indicators = document.querySelectorAll('.indicator');
+            const items = document.querySelectorAll('.carousel-item');
+            let currentIndex = 0;
+            const itemCount = items.length;
+            
+            // 自动轮播
+            function startCarousel() {
+                return setInterval(() => {
+                    currentIndex = (currentIndex + 1) % itemCount;
+                    updateCarousel();
+                }, 3000);
+            }
+            
+            // 更新轮播图显示
+            function updateCarousel() {
+                carouselInner.style.transform = `translateX(-${currentIndex * 100}%)`;
+                
+                // 更新指示器
+                indicators.forEach((indicator, index) => {
+                    if (index === currentIndex) {
+                        indicator.classList.add('active');
+                    } else {
+                        indicator.classList.remove('active');
+                    }
+                });
+            }
+            
+            // 点击指示器切换
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', () => {
+                    currentIndex = index;
+                    updateCarousel();
+                    clearInterval(carouselInterval);
+                    carouselInterval = startCarousel();
+                });
+            });
+            
+            
+            // 底部导航栏交互
+            const tabItems = document.querySelectorAll('.tab-item');
+            tabItems.forEach((item, index) => {
+                item.addEventListener('click', function() {
+                    tabItems.forEach(tab => tab.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    if (index === 1) {
+                        alert('切换到我的页面');
+                        // 实际应用中可以使用 window.location.href = 'mine/index.html';
+                    }
+                });
+            });
+            
+            // 启动轮播
+            let carouselInterval = startCarousel();
+            
+            // 鼠标悬停时暂停轮播
+            const carousel = document.querySelector('.carousel');
+            carousel.addEventListener('mouseenter', () => {
+                clearInterval(carouselInterval);
+            });
+            
+            carousel.addEventListener('mouseleave', () => {
+                carouselInterval = startCarousel();
+            });
+        });
+    </script>
+</body>
+</html> 
